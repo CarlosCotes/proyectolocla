@@ -1,0 +1,103 @@
+{
+    "audifonos": [
+        {
+            "Referencia": "airpods 2 generacion",
+            "Precio": "$792.960",
+            "Fabricante": "Apple",
+            "Garantia": "1 year"
+        },
+        {
+            "Referencia": "redmi buds 6 xiaomi",
+            "Precio": "$199.900",
+            "Fabricante": "xiaomi",
+            "Garantia": "1 year"
+        },
+        {
+            "Referencia": "samsung galaxy buds FE",
+            "Precio": "$507.900",
+            "Fabricante": "samsung",
+            "Garantia": ""
+        }
+    ],
+    "televisores": [
+        {
+            "Referencia": "TV Kalley 50P QLED GTV50UHDQV2",
+            "Precio": "$1.989.900",
+            "Fabricante": "Kalley",
+            "Garantia": "2 year"
+        },
+        {
+            "Referencia": "TV Samsung 58P Crystal UHD 4K CU7000",
+            "Precio": "$3.337.900",
+            "Fabricante": "Samsung",
+            "Garantia": "1 year"
+        },
+        {
+            "Referencia": "TV Panasonic 43P LED 4K FHD Smart TV",
+            "Precio": "$1.901.900",
+            "Fabricante": "Panasonic",
+            "Garantia": "1 year"
+        }
+    ],
+    "computadores": [
+        {
+            "Referencia": "Laptop onix Series ryzen 7",
+            "Precio": "$1.999.000",
+            "Fabricante": "compumax",
+            "Garantia": "1 year"
+        },
+        {
+            "Referencia": "Portatil Acer Nitro AN515-58-55TY 512 GB SSD 15.6",
+            "Precio": "$4.430.90",
+            "Fabricante": "Acer",
+            "Garantia": "1 year"
+        },
+        {
+            "Referencia": "Portatil Lenovo 15ALC7 R5 8GB 512GB Linux Azul",
+            "Precio": "$1.692.900 ",
+            "Fabricante": "Lenovo",
+            "Garantia": "1 year"
+        }
+    ],
+    "apple": [
+        {
+            "Referencia": "Celular iPhone 11 128GB 4G",
+            "Precio": "$1.999.960 ",
+            "Fabricante": "Apple",
+            "Garantia": "1 year"
+        },
+        {
+            "nombre": "Iphone 15 Pro Max 256gb 5g",
+            "precio": "$6.729.960",
+            "fabricante": "Apple",
+            "direccion": "1 year"
+        },
+        {
+            "nombre": "Iphone 13 128gb 5g",
+            "precio": "$2.999.960",
+            "fabricante": "Apple",
+            "direccion": "1 year"
+        },
+        {}
+    ],
+    "samsung": [
+        {
+            "nombre": "Celular Samsung Galaxy S23 Fe 256GB 5G",
+            "precio": "$2.498.950 ",
+            "fabricante": "samsung",
+            "direccion": "1 year"
+        },
+        {
+            "nombre": "Celular Samsung Galaxy A54 256 GB 5G",
+            "precio": "$1.649.950",
+            "fabricante": "samsung",
+            "direccion": "1 year"
+        },
+        {
+            "nombre": "Celular Samsung Galaxy A35 256 GB 5G",
+            "precio": "$1.399.950",
+            "fabricante": "samsung",
+            "direccion": "1  year"
+        }
+    ]
+}
