@@ -120,4 +120,14 @@ def añadir_producto():
     elif esc == 8:
         registrar_tecno(datos)
         
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)   
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
+    
+    
+def mostrar_productos():
+    with open('menu_tienda/productos_tienda.json', 'r') as file:
+        datos = json.load(file)
+        print("Productos Disponibles:")
+        for producto, detalles in datos["Productos"].items():
+            print(f"{producto}: {detalles['Precio']}")
+
+            

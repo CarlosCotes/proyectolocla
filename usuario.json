@@ -4,7 +4,15 @@
             "nombre": "Mario",
             "documento": "122435664",
             "numero telefonico": "14256477",
-            "direccion": "calle 35"
+            "direccion": "calle 35",
+            "tipo de cliente": "Leal",
+            "Servicios adquiridos": []
+        },
+        {
+            "nombre": "Juan",
+            "documento": "1099738929",
+            "numero telefonico": "3226034081",
+            "direccion": "calle 45"
         }
     ]
 }
