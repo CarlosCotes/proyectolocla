@@ -67,13 +67,13 @@
             "Garantia": "1 year"
         },
         {
-            "nombre": "Iphone 15 Pro Max 256gb 5g",
+            "referencia": "Iphone 15 Pro Max 256gb 5g",
             "precio": "$6.729.960",
             "fabricante": "Apple",
             "direccion": "1 year"
         },
         {
-            "nombre": "Iphone 13 128gb 5g",
+            "referencia": "Iphone 13 128gb 5g",
             "precio": "$2.999.960",
             "fabricante": "Apple",
             "direccion": "1 year"
@@ -82,22 +82,31 @@
     ],
     "samsung": [
         {
-            "nombre": "Celular Samsung Galaxy S23 Fe 256GB 5G",
+            "referencia": "Celular Samsung Galaxy S23 Fe 256GB 5G",
             "precio": "$2.498.950 ",
             "fabricante": "samsung",
             "direccion": "1 year"
         },
         {
-            "nombre": "Celular Samsung Galaxy A54 256 GB 5G",
+            "referencia": "Celular Samsung Galaxy A54 256 GB 5G",
             "precio": "$1.649.950",
             "fabricante": "samsung",
             "direccion": "1 year"
         },
         {
-            "nombre": "Celular Samsung Galaxy A35 256 GB 5G",
+            "referencia": "Celular Samsung Galaxy A35 256 GB 5G",
             "precio": "$1.399.950",
             "fabricante": "samsung",
             "direccion": "1  year"
         }
+    ],
+    "motorola": [
+
+    ],
+    "xiaomi":[
+
+    ],
+    "tecno": [
+
     ]
 }

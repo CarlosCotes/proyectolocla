@@ -1,0 +1,10 @@
+def registrar_tecno(datos:dict):
+    tecno={}
+    tecno["nombre"]=input("Ingrese el nombre: ")
+    tecno["precio"]=input("Ingrese el precio: ")
+    tecno["fabricante"]=input("Ingrese el fabricane ")
+    tecno["direccion"]=input("Ingrese la garantia ")
+    print(datos["tecno"])
+    datos["tecno"].append(tecno)
+    print("tecno registrado con éxito!")
+    return datos

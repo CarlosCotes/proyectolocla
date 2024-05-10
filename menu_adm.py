@@ -1,3 +1,4 @@
+#Importaciones de otros archivos para usarlos en este y unirlos
 from datos import *
 from menu import *
 from usuario import *
@@ -5,6 +6,11 @@ from aggprd import *
 from menu_adm import *
 from menu_tienda import *
 from menu_servicios import *
+from eliprd import *
+#constantes para cargar y guardar los datos en las carpetas
+RUTA_BASE_DE_DATOS = "usuario.json"
+datos = cargar_datos(RUTA_BASE_DE_DATOS)
+#Ramificaciones del menu administrativo
 
 def men_adm():
     print("-------------------------------------------------")
@@ -19,16 +25,21 @@ def men_adm():
     print("7. agregar productos a la tienda")
     print("8. eliminar productos de la tienda")
     print("-------------------------------------------------")
-while True:
-    opc = int(input("Ingrese la opcion que requiera: "))
-    if opc == 1:
-        registrar_usuario(datos)
-    elif opc == 3:
-        eliminar_usuario(datos)
-    elif opc == 0:
-            print("gracias por preferirnos")
+    while True:
+        opc = int(input("Ingrese la opcion que requiera: "))
+        if opc == +1:
+            registrar_usuario(datos)
+        elif opc == 3:
+            eliminar_usuario(datos)
+        elif opc == 7:
+            añadir_producto()
+        elif opc ==8:
+            eliminar_producto()
+        elif opc == 0:
+            print("¡Buen trabajo!")
             break
-
+            
+guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
     
     
