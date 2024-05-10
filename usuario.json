@@ -1,24 +1,10 @@
 {
     "usuario": [
         {
-            "nombre": "Carlos",
-            "documento": "1122840401",
-            "numero telefonico": "3146117593",
-            "direccion": "Calle 30",
-            "tipo de cliente": "leal",
-            "servicios adquiridos": []
-        },
-        {
             "nombre": "Mario",
             "documento": "122435664",
             "numero telefonico": "14256477",
             "direccion": "calle 35"
-        },
-        {
-            "nombre": "Alvaro",
-            "documento": "212412421",
-            "numero telefonico": "1242315",
-            "direccion": "cll 54"
         }
     ]
 }
