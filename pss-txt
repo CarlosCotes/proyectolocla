@@ -1,8 +1,0 @@
-def eliminar_tecno(datos):
-    datos = dict(datos)
-    referencia =input("Ingrese la referencia del tecno: ")
-    for i in range(len(datos["tecno"])):
-        if datos["tecno"][i]["referencia"] == referencia:
-                datos["tecno"].pop(i)
-                print("producto eliminado!")
-                return datos

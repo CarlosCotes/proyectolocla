@@ -101,12 +101,13 @@
         }
     ],
     "motorola": [
-
+        {
+            "referencia": "12324",
+            "precio": "1252345",
+            "fabricante": "215125",
+            "direccion": "232"
+        }
     ],
-    "xiaomi":[
-
-    ],
-    "tecno": [
-
-    ]
+    "xiaomi": [],
+    "tecno": []
 }

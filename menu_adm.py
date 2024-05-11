@@ -2,16 +2,15 @@
 from datos import *
 from menu import *
 from usuario import *
-from aggprd import *
+from productos_config import *
 from menu_adm import *
 from menu_tienda import *
 from menu_servicios import *
-from eliprd import *
+
 #constantes para cargar y guardar los datos en las carpetas
 RUTA_BASE_DE_DATOS = "usuario.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
 #Ramificaciones del menu administrativo
-
 
 print("-------------------------------------------------")
 print("Bienvenido al menu administrador")
@@ -30,9 +29,9 @@ print("-------------------------------------------------")
 while True:
     opc = int(input("Ingrese la opcion que requiera: "))
     if opc == 1:
-        registrar_usuarioadm(datos)
+        datos = registrar_usuarioadm(datos)
     elif opc == 2:
-        print("2")
+        actualizar_usuario(datos)
     elif opc == 3:
         eliminar_usuario(datos)
     elif opc == 4:
