@@ -1,6 +1,6 @@
 def actualizar_usuario(datos):
     datos=dict(datos)
-    documento =input("Ingrese el documento del cliente a remplazar: ")
+    documento =input("Ingrese el documento del usuarioe a remplazar: ")
     for i in range(len(datos["usuario"])):
         if datos["usuario"][i]["documento"]== documento:
 
@@ -58,5 +58,47 @@ def eliminar_usuario(datos):
                 datos["usuario"].pop(i)
                 print("Participante eliminado!")
                 return datos
-#def manejo_de_cuenta():
+            
+def mostrar_usuariome():
+    #Ramificaciones menu usuario
+    print("-------------------------------------------------")
+    print("Bienvenido al menu de para ver los usuarios")
+    print("1. ver todos los usuarios")
+    print("2. ver un usuario en especifico")
+    print("0. volver al menu usuario")
+    print("-------------------------------------------------")
+    while True:
+        opc = int(input("Ingrese la opcion que requiera: "))
+        if opc == 1:
+            datos = mostrar_usuarios(datos)
+        elif opc == 2:
+            datos = mostrar_usuario(datos)
+        elif opc == 0:
+            
+            print("volviendo")
+            break
+
+
+def mostrar_usuarios(datos):
+    try:
+        datos = dict(datos)
+        print("usuarios:")
+        for i in range(len(datos["usuario"])):
+            print(datos["usuario"][i]["nombre"], " - ", datos["usuario"][i]["documento"])
+    except Exception:
+                print("Valor inválido")
+                print("-------------------------------------------------")
+                return -1
+def mostrar_usuario(datos):
+    try:
+        datos=dict(datos)
+        documento =input("Ingrese el documento del usuario: ")
+        for i in range(len(datos["usuario"])):
+            if datos["usuario"][i]["documento"] == documento:
+                print(datos["usuario"][i])
+    except Exception:
+            print("Valor inválido")
+            print("-------------------------------------------------")
+            return -1
+
     

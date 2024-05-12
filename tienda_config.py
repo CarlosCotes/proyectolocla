@@ -1,6 +1,6 @@
 #Importaciones
 from datos import *
-RUTA_BASE_DE_DATOS = "productos_tienda.json"
+RUTA_BASE_DE_DATOS = "tienda.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
 #Añadir productos a la tienda
 def registrar_audifonos(datos):
@@ -9,6 +9,7 @@ def registrar_audifonos(datos):
     audifonos["precio"]=input("Ingrese el precio: ")
     audifonos["fabricante"]=input("Ingrese el fabricane ")
     audifonos["direccion"]=input("Ingrese la garantia ")
+    audifonos["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
     print(datos["audifonos"])
     datos["audifonos"].append(audifonos)
     print("audifonos registrado con éxito!")
@@ -20,6 +21,7 @@ def registrar_televisor(datos):
     televisor["precio"]=input("Ingrese el precio: ")
     televisor["fabricante"]=input("Ingrese el fabricane ")
     televisor["direccion"]=input("Ingrese la garantia ")
+    televisor["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
     print(datos["televisor"])
     datos["televisor"].append(televisor)
     print("televisor registrado con éxito!")
@@ -30,6 +32,7 @@ def registrar_computador(datos):
     computador["precio"]=input("Ingrese el precio: ")
     computador["fabricante"]=input("Ingrese el fabricane ")
     computador["direccion"]=input("Ingrese la garantia ")
+    computador["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
     print(datos["computador"])
     datos["computador"].append(computador)
     print("computador registrado con éxito!")
@@ -41,6 +44,7 @@ def registrar_apple(datos):
     apple["precio"]=input("Ingrese el precio: ")
     apple["fabricante"]=input("Ingrese el fabricane ")
     apple["direccion"]=input("Ingrese la garantia ")
+    apple["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
     print(datos["apple"])
     datos["apple"].append(apple)
     print("apple registrado con éxito!")
@@ -52,6 +56,8 @@ def registrar_samsung(datos):
     samsung["precio"]=input("Ingrese el precio: ")
     samsung["fabricante"]=input("Ingrese el fabricane ")
     samsung["direccion"]=input("Ingrese la garantia ")
+    samsung["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
+    
     print(datos["samsung"])
     datos["samsung"].append(samsung)
     print("samsung registrado con éxito!")
@@ -63,6 +69,7 @@ def registrar_motorola(datos):
     motorola["precio"]=input("Ingrese el precio: ")
     motorola["fabricante"]=input("Ingrese el fabricane ")
     motorola["direccion"]=input("Ingrese la garantia ")
+    motorola["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ") 
     print(datos["motorola"])
     datos["motorola"].append(motorola)
     print("motorola registrado con éxito!")
@@ -74,6 +81,7 @@ def registrar_xiaomi(datos):
     xiaomi["precio"]=input("Ingrese el precio: ")
     xiaomi["fabricante"]=input("Ingrese el fabricane ")
     xiaomi["direccion"]=input("Ingrese la garantia ")
+    xiaomi["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
     print(datos["xiaomi"])
     datos["xiaomi"].append(xiaomi)
     print("xiaomi registrado con éxito!")
@@ -85,12 +93,13 @@ def registrar_tecno(datos):
     tecno["precio"]=input("Ingrese el precio: ")
     tecno["fabricante"]=input("Ingrese el fabricane ")
     tecno["direccion"]=input("Ingrese la garantia ")
+    tecno["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
     print(datos["tecno"])
     datos["tecno"].append(tecno)
     print("tecno registrado con éxito!")
     return datos
 #Menu para escoger que producto se va a añadir
-def añadir_producto():
+def agregar_producto():
     print("¿Que producto desea agregar?")
     print("Tecnologia")
     print("1.audifonos")
@@ -122,21 +131,56 @@ def añadir_producto():
         
     guardar_datos(datos,RUTA_BASE_DE_DATOS)
     
+
+    
     
 def mostrar_productos():
-    with open('menu_tienda/productos_tienda.json', 'r') as file:
-        datos = json.load(file)
-        print("Productos Disponibles:")
-        for producto, detalles in datos["Productos"].items():
-            print(f"{producto}: {detalles['Precio']}")
-
+    print("¿Que productos desea ver? ")
+    prd = str(input("ingrese nombre de la catergoria : "))
+    datos = (datos)
+    print (prd)
+    print("Productos disponibles")
+    for i in range(len(datos[prd])):
+        print(datos[prd][i]["referencia"], " - ", datos[prd][i]["cantidad disponible"])
+     
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
 #actualizar           
 
 
 
 #eliminar
-
+def eliminar_producto():
+    print("¿Que producto desea eliminar?")
+    print("Tecnologia")
+    print("1.audifonos")
+    print("2.Televisores")
+    print("3.computadores")
+    print("Celulares")
+    print("4.apple")
+    print("5.Samsumg")
+    print("6.Motorola")
+    print("7.Xiaomi")
+    print("8.Tecno")
+    esc = int(input("Ingrese la opcion que requiera: "))
+    if esc == 1:
+        eliminar_audifonos(datos)
+    elif esc == 2:
+        eliminar_televisor(datos)
+    elif esc == 3:
+        eliminar_computador(datos)
+    elif esc == 4:
+        eliminar_apple(datos)
+    elif esc == 5:
+        eliminar_samsung(datos)
+    elif esc == 6:
+        eliminar_motorola(datos)
+    elif esc == 7:
+        eliminar_xiaomi(datos)
+    elif esc == 8:
+        eliminar_tecno(datos)
+        
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
 def eliminar_audifonos(datos):
     datos = dict(datos)

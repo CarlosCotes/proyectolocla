@@ -1,52 +1,40 @@
 #Importaciones de otros archivos para usarlos en este y unirlos
 from datos import *
-from menu import *
-from usuario import *
-from productos_config import *
-from menu_adm import *
-from menu_tienda import *
-from menu_servicios import *
+from usuario_menu import *
+from usuario_config import *
+from tienda_menu import *
+from tienda_config import *
+from servicios_menu import *
 
 #constantes para cargar y guardar los datos en las carpetas
 RUTA_BASE_DE_DATOS = "usuario.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
-#Ramificaciones del menu administrativo
+try:
+    while True:
+        #Ramificaciones del menu administrativo
+        print("-------------------------------------------------")
+        print("Bienvenido al menu administrador")
+        print("1. menu usuario")
+        print("2. menu tienda")
+        print("3. menu servicios")
+        print("4. menu reportes")
+        print("0. salir del menu")
+        print("-------------------------------------------------")
+        opc = str(input("Ingrese la opcion que requiera: "))
+        if opc == "1":
+            menu_usuario()
+        elif opc == "2":
+            menu_tienda()
+        elif opc == "3":
+            datos = eliminar_usuario(datos)
 
-print("-------------------------------------------------")
-print("Bienvenido al menu administrador")
-print("ingrese la opcion que requiera")
-print("1. registrar usuario")
-print("2. actualizar usuario")
-print("3. eliminar usuario")
-print("4. mostrar usuarios de claro")
-print("5. ver historial de compras de usuario")
-print("6. ver reportes")
-print("7. agregar productos a la tienda")
-print("8. eliminar productos de la tienda")
-print("9. agregar servicios")
-print("10. eliminar servicios")
-print("-------------------------------------------------")
-while True:
-    opc = int(input("Ingrese la opcion que requiera: "))
-    if opc == 1:
-        datos = registrar_usuarioadm(datos)
-    elif opc == 2:
-        actualizar_usuario(datos)
-    elif opc == 3:
-        eliminar_usuario(datos)
-    elif opc == 4:
-        print("4")
-    elif opc == 5:
-        print("5")
-    elif opc == 7:
-        añadir_producto()
-    elif opc ==8:
-        eliminar_producto()
-    elif opc == 0:
-        
-        print("¡Buen trabajo!")
-        break
+        elif opc == "0":
             
+            print("¡Buen trabajo!")
+            break
+except Exception:
+            print("Valor inválido")
+            print("-------------------------------------------------")
 guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
     
