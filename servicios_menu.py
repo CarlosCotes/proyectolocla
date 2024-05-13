@@ -2,7 +2,7 @@ from datos import *
 from servicios_config import *
 RUTA_BASE_DE_DATOS = "servicios.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
-def menu_tienda():
+def menu_servicios():
     #Ramificaciones menu servicios
     print("-------------------------------------------------")
     print("Bienvenido al menu de tienda que cambios requiere realizar")

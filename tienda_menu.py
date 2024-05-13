@@ -13,18 +13,16 @@ def menu_tienda():
     print("0. volver al menu principal")
     print("-------------------------------------------------")
     while True:
-        opc = str(input("Ingrese la opcion que requiera: "))
-        if opc == "1":
-            datos = agregar_producto(datos)
-        elif opc == "2":
-            datos = eliminar_producto(datos)
+        opc = float(input("Ingrese la opcion que requiera: "))
+        if opc == 1:
+            agregar_producto()
+        elif opc == 2:
+            eliminar_producto()
         #elif opc == 3:
             #datos = actualizar_producto(datos)
-        #elif opc == 4:
-            
-        elif opc == "0":
-            
+        elif opc == 4:
+            mostrar_productos()        
+        elif opc == 0:
             print("volviendo")
             break
-                
 guardar_datos(datos,RUTA_BASE_DE_DATOS)

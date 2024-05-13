@@ -15,16 +15,15 @@ def menu_usuario():
     while True:
         opc = str(input("Ingrese la opcion que requiera: "))
         if opc == "1":
-            datos = registrar_usuarioadm(datos)
+            registrar_usuarioadm(datos)
         elif opc == "2":
-            datos = eliminar_usuario(datos)
+            eliminar_usuario(datos)
         elif opc == "3":
-            datos = actualizar_usuario(datos)
+            actualizar_usuario(datos)
         elif opc == "4":
-            datos = mostrar_usuariome()
+            mostrar_usuariome()
         elif opc == "0":
             
             print("volviendo")
             break
-                
-guardar_datos(datos,RUTA_BASE_DE_DATOS)
+               

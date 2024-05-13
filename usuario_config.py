@@ -1,6 +1,7 @@
+from datos import *
 def actualizar_usuario(datos):
     datos=dict(datos)
-    documento =input("Ingrese el documento del usuarioe a remplazar: ")
+    documento =input("Ingrese el documento del usuario: ")
     for i in range(len(datos["usuario"])):
         if datos["usuario"][i]["documento"]== documento:
 
@@ -45,7 +46,7 @@ def registrar_usuarioadm(datos:dict):
     usuario["documento"]=input("Ingrese el documento: ")
     usuario["numero telefonico"]=input("Ingrese su numero telefono ")
     usuario["direccion"]=input("Ingrese su direccion ")
-    usuario["tipo de usuario"]=input("ingrese si el usuario es nuevo , leal o regular  ")
+    usuario["tipo de usuario"]=input(("nuevo"))
     datos["usuario"].append(usuario)
     print("usuario registrado con éxito!")
     return datos
@@ -58,8 +59,10 @@ def eliminar_usuario(datos):
                 datos["usuario"].pop(i)
                 print("Participante eliminado!")
                 return datos
-            
+
 def mostrar_usuariome():
+    RUTA_BASE_DE_DATOS = "usuario.json"
+    datos = cargar_datos(RUTA_BASE_DE_DATOS)
     #Ramificaciones menu usuario
     print("-------------------------------------------------")
     print("Bienvenido al menu de para ver los usuarios")
@@ -77,28 +80,17 @@ def mostrar_usuariome():
             
             print("volviendo")
             break
-
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)           
 
 def mostrar_usuarios(datos):
-    try:
         datos = dict(datos)
         print("usuarios:")
         for i in range(len(datos["usuario"])):
             print(datos["usuario"][i]["nombre"], " - ", datos["usuario"][i]["documento"])
-    except Exception:
-                print("Valor inválido")
-                print("-------------------------------------------------")
-                return -1
-def mostrar_usuario(datos):
-    try:
-        datos=dict(datos)
-        documento =input("Ingrese el documento del usuario: ")
-        for i in range(len(datos["usuario"])):
-            if datos["usuario"][i]["documento"] == documento:
-                print(datos["usuario"][i])
-    except Exception:
-            print("Valor inválido")
-            print("-------------------------------------------------")
-            return -1
 
-    
+def mostrar_usuario(datos1):
+        datos1 = dict(datos1)
+        documento =input("Ingrese el documento del usuario: ")
+        for i in range(len(datos1["usuario"])):
+            if datos1["usuario"][i]["documento"] == documento:
+                print(datos1["usuario"][i])
