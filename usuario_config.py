@@ -71,12 +71,12 @@ def mostrar_usuariome():
     print("0. volver al menu usuario")
     print("-------------------------------------------------")
     while True:
-        opc = int(input("Ingrese la opcion que requiera: "))
-        if opc == 1:
+        opc = str(input("Ingrese la opcion que requiera: "))
+        if opc == "1":
             datos = mostrar_usuarios(datos)
-        elif opc == 2:
+        elif opc == "2":
             datos = mostrar_usuario(datos)
-        elif opc == 0:
+        elif opc == "0":
             
             print("volviendo")
             break

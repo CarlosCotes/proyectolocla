@@ -1,18 +1,49 @@
 {
-    "usuario": [
+    "prepago": [
         {
-            "nombre": "Mario",
-            "documento": "1122840401",
-            "numero telefonico": "14256477",
-            "direccion": "calle 35",
-            "tipo de cliente": "Leal",
-            "Servicios adquiridos": []
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
+        }
+    ],
+    "postpago": [
+        {
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
         },
         {
-            "nombre": "Juan",
-            "documento": "1099738929",
-            "numero telefonico": "3226034081",
-            "direccion": "calle 45"
+            "referencia": "90 GB 5G",
+            "precio": "55.900",
+            "caracteristicas": ""
+        }
+    ],
+    "roaming_internacional": [
+        {
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
+        }
+    ],
+    "tripleplay": [
+        {
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
+        }
+    ],
+    "planes_de_internet": [
+        {
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
+        }
+    ],
+    "planes_de_television": [
+        {
+            "referencia": "",
+            "precio": "",
+            "caracteristicas": ""
         }
     ]
 }

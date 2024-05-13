@@ -9,20 +9,27 @@ def menu_tienda():
     print("1. agregar productos a la tienda")
     print("2. eliminar productos de la tienda")
     print("3. actualiza productos de la tienda")
-    print("4. mostrar productos de la tienda")
+    print("4. mostrar menu para ver los productos")
     print("0. volver al menu principal")
     print("-------------------------------------------------")
     while True:
-        opc = float(input("Ingrese la opcion que requiera: "))
-        if opc == 1:
+        opc = str(input("Ingrese la opcion que requiera: "))
+        if opc == "1":
             agregar_producto()
-        elif opc == 2:
+        elif opc == "2":
             eliminar_producto()
-        #elif opc == 3:
-            #datos = actualizar_producto(datos)
-        elif opc == 4:
-            mostrar_productos()        
-        elif opc == 0:
+        elif opc == "3":
+            datos = actualizar_producto(datos)
+        elif opc == "4":
+            mostrar_productome()        
+        elif opc == "0":
             print("volviendo")
+            print("-------------------------------------------------")
+            print("1. menu usuario")
+            print("2. menu tienda")
+            print("3. menu servicios")
+            print("4. menu reportes")
+            print("0. salir del menu")
+            print("-------------------------------------------------")
             break
 guardar_datos(datos,RUTA_BASE_DE_DATOS)

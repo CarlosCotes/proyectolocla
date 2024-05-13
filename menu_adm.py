@@ -14,20 +14,21 @@ while True:
     #Ramificaciones del menu administrativo
     print("-------------------------------------------------")
     print("Bienvenido al menu administrador")
+    print("opciones")
     print("1. menu usuario")
     print("2. menu tienda")
     print("3. menu servicios")
     print("4. menu reportes")
     print("0. salir del menu")
     print("-------------------------------------------------")
-    opc = float(input("Ingrese la opcion que requiera: "))
-    if opc == 1:
+    opc = str(input("Ingrese la opcion que requiera: "))
+    if opc == "1":
         menu_usuario()
-    elif opc == 2:
+    elif opc == "2":
         menu_tienda()
-    elif opc == 3:
-        print("l")
-    elif opc == 0:
+    elif opc == "3":
+        menu_servicios()
+    elif opc == "0":
         print("¡Buen trabajo!")
         break
 guardar_datos(datos,RUTA_BASE_DE_DATOS)

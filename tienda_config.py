@@ -2,7 +2,161 @@
 from datos import *
 RUTA_BASE_DE_DATOS = "tienda.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
-#Añadir productos a la tienda
+#Menu para escoger que producto se va a añadir
+def agregar_producto():
+    print("-------------------------------------------------")
+    print("¿Que producto desea agregar?")
+    print("Tecnologia")
+    print("1. audifonos")
+    print("2. Televisores")
+    print("3. computadores")
+    print("Celulares")
+    print("4. apple")
+    print("5. Samsumg")
+    print("6. Motorola")
+    print("7. Xiaomi")
+    print("8. Tecno")
+    print("-------------------------------------------------")
+    esc = str(input("Ingrese la opcion que requiera: "))
+    if esc == "1":
+        registrar_audifonos(datos)
+    elif esc == "2":
+        registrar_televisor(datos)
+    elif esc == "3":
+        registrar_computador(datos)
+    elif esc == "4":
+        registrar_apple(datos)
+    elif esc == "5":
+        registrar_samsung(datos)
+    elif esc == "6":
+        registrar_motorola(datos)
+    elif esc == "7":
+        registrar_xiaomi(datos)
+    elif esc == "8":
+        registrar_tecno(datos)
+        
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
+    
+
+    
+def mostrar_productome():
+    RUTA_BASE_DE_DATOS = "tienda.json"
+    datos = cargar_datos(RUTA_BASE_DE_DATOS)
+    #Ramificaciones menu producto
+    print("-------------------------------------------------")
+    print("Bienvenido al menu de para ver los productos")
+    print("1. ver todos los productos")
+    print("2. ver un producto en especifico")
+    print("0. volver al menu producto")
+    print("-------------------------------------------------")
+    while True:
+        opc = str(input("Ingrese la opcion que requiera: "))
+        if opc == "1":
+            datos = mostrar_productos(datos)
+        elif opc == "2":
+            datos = mostrar_producto(datos)
+        elif opc == "0":
+            
+            print("volviendo")
+            break
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)           
+def mostrar_productos(datos):
+    RUTA_BASE_DE_DATOS = "tienda.json"
+    datos2 = cargar_datos(RUTA_BASE_DE_DATOS)
+    print("¿Que productos desea ver? ")
+    prd = str(input("ingrese nombre de la catergoria : "))
+    datos2 = (datos2)
+    print (prd)
+    print("Productos disponibles")
+    for i in range(len(datos2[prd])):
+        print(datos2[prd][i]["referencia"], " - ", datos2[prd][i]["cantidad disponible"])
+     
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
+def mostrar_producto(datos1):
+        datos1 = dict(datos1)
+        referencia =input("Ingrese el referencia del producto: ")
+        for i in range(len(datos1["producto"])):
+            if datos1["producto"][i]["referencia"] == referencia:
+                print(datos1["producto"][i])
+#actualizar           
+def actualizar_producto(datos):
+    datos=dict(datos)
+    referencia =input("Ingrese el referencia del producto: ")
+    for i in range(len(datos["producto"])):
+        if datos["producto"][i]["referencia"]== referencia:
+
+
+            while True:
+                print("¿infomacion que requiera modificar")
+                print("0. para salir ")
+                print("1. para modificar el nombre: ")
+                print("2. para modificar el referencia: ")
+                print("3. para modificar la direccion: ")
+                print("4. para modificar el telefono: ")
+
+                opc=input("ingrese la opcion: ")
+
+                if opc=="1":
+                    datos["producto"][i]["nombre"]= input("ingrese el nuevo nombre: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+
+                elif opc== "2":
+                    datos["producto"][i]["referencia"]=input("ingrese el nuevo referencia: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+                elif opc=="3":
+                    datos["producto"][i]["direccion"]= input("ingrese la nueva direccion: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+                    
+                elif opc=="4":
+                    datos["producto"][i]["telefono"]= input("ingrese el nuevo telefono: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+                elif opc=="0":
+                    break
+
+
+#eliminar
+def eliminar_producto():
+    print("-------------------------------------------------")
+    print("¿Que producto desea eliminar?")
+    print("Tecnologia")
+    print("1. audifonos")
+    print("2. Televisores")
+    print("3. computadores")
+    print("Celulares")
+    print("4. apple")
+    print("5. Samsumg")
+    print("6. Motorola")
+    print("7. Xiaomi")
+    print("8. Tecno")
+    print("-------------------------------------------------")
+    esc = str(input("Ingrese la opcion que requiera: "))
+    if esc == "1":
+        eliminar_audifonos(datos)
+    elif esc == "2":
+        eliminar_televisor(datos)
+    elif esc == "3":
+        eliminar_computador(datos)
+    elif esc == "4":
+        eliminar_apple(datos)
+    elif esc == "5":
+        eliminar_samsung(datos)
+    elif esc == "6":
+        eliminar_motorola(datos)
+    elif esc == "7":
+        eliminar_xiaomi(datos)
+    elif esc == "8":
+        eliminar_tecno(datos)
+        
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
+
+#Funciones para agregar productos
 def registrar_audifonos(datos):
     audifonos={}
     audifonos["referencia"]=input("Ingrese el referencia: ")
@@ -26,6 +180,7 @@ def registrar_televisor(datos):
     datos["televisor"].append(televisor)
     print("televisor registrado con éxito!")
     return datos
+
 def registrar_computador(datos):
     computador={}
     computador["referencia"]=input("Ingrese el referencia: ")
@@ -98,90 +253,7 @@ def registrar_tecno(datos):
     datos["tecno"].append(tecno)
     print("tecno registrado con éxito!")
     return datos
-#Menu para escoger que producto se va a añadir
-def agregar_producto():
-    print("¿Que producto desea agregar?")
-    print("Tecnologia")
-    print("1.audifonos")
-    print("2.Televisores")
-    print("3.computadores")
-    print("Celulares")
-    print("4.apple")
-    print("5.Samsumg")
-    print("6.Motorola")
-    print("7.Xiaomi")
-    print("8.Tecno")
-    esc = int(input("Ingrese la opcion que requiera: "))
-    if esc == 1:
-        registrar_audifonos(datos)
-    elif esc == 2:
-        registrar_televisor(datos)
-    elif esc == 3:
-        registrar_computador(datos)
-    elif esc == 4:
-        registrar_apple(datos)
-    elif esc == 5:
-        registrar_samsung(datos)
-    elif esc == 6:
-        registrar_motorola(datos)
-    elif esc == 7:
-        registrar_xiaomi(datos)
-    elif esc == 8:
-        registrar_tecno(datos)
-        
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)
-    
-
-    
-    
-def mostrar_productos():
-    print("¿Que productos desea ver? ")
-    prd = str(input("ingrese nombre de la catergoria : "))
-    datos = (datos)
-    print (prd)
-    print("Productos disponibles")
-    for i in range(len(datos[prd])):
-        print(datos[prd][i]["referencia"], " - ", datos[prd][i]["cantidad disponible"])
-     
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)
-
-#actualizar           
-
-
-
-#eliminar
-def eliminar_producto():
-    print("¿Que producto desea eliminar?")
-    print("Tecnologia")
-    print("1.audifonos")
-    print("2.Televisores")
-    print("3.computadores")
-    print("Celulares")
-    print("4.apple")
-    print("5.Samsumg")
-    print("6.Motorola")
-    print("7.Xiaomi")
-    print("8.Tecno")
-    esc = int(input("Ingrese la opcion que requiera: "))
-    if esc == 1:
-        eliminar_audifonos(datos)
-    elif esc == 2:
-        eliminar_televisor(datos)
-    elif esc == 3:
-        eliminar_computador(datos)
-    elif esc == 4:
-        eliminar_apple(datos)
-    elif esc == 5:
-        eliminar_samsung(datos)
-    elif esc == 6:
-        eliminar_motorola(datos)
-    elif esc == 7:
-        eliminar_xiaomi(datos)
-    elif esc == 8:
-        eliminar_tecno(datos)
-        
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)
-
+#Funciones para eliminar productos
 def eliminar_audifonos(datos):
     datos = dict(datos)
     referencia =input("Ingrese la referencia del audifonos: ")
@@ -255,32 +327,4 @@ def eliminar_tecno(datos):
                 return datos
                                  
 #Menu para escoger que producto se va a eliminar
-def eliminar_producto():
-    print("¿Que producto desea eliminar?")
-    print("Tecnologia")
-    print("1.audifonos")
-    print("2.Televisores")
-    print("3.computadores")
-    print("Celulares")
-    print("4.apple")
-    print("5.Samsumg")
-    print("6.Motorola")
-    print("7.Xiaomi")
-    print("8.Tecno")
-    esc = int(input("Ingrese la opcion que requiera: "))
-    if esc == 1:
-        eliminar_audifonos(datos)
-    elif esc == 2:
-        eliminar_televisor(datos)
-    elif esc == 3:
-        eliminar_computador(datos)
-    elif esc == 4:
-        eliminar_apple(datos)
-    elif esc == 5:
-        eliminar_samsung(datos)
-    elif esc == 6:
-        eliminar_motorola(datos)
-    elif esc == 7:
-        eliminar_xiaomi(datos)
-    elif esc == 8:
         eliminar_tecno(datos)
