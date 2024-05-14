@@ -116,11 +116,18 @@
     ],
     "motorola": [
         {
-            "referencia": "12324",
-            "precio": "1252345",
-            "fabricante": "215125",
-            "direccion": "232",
-            "cantidad disponible": "20000"
+            "referencia": "Celular Motorola Moto G54 128 GB 5G",
+            "precio": "$569.900",
+            "fabricante": "motorola",
+            "direccion": "1 year",
+            "cantidad disponible": "2000"
+        },
+        {
+            "referencia": "Celular Motorola Edge 40 Neo 256 GB 5G",
+            "precio": "$1.321.900",
+            "fabricante": "Motorola",
+            "direccion": "1 year",
+            "cantidad disponible": "2000"
         }
     ],
     "xiaomi": [],

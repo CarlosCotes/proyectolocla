@@ -1,20 +1,20 @@
 
-def registrar_usuarioadm(datos:dict):
-    usuario={}
-    usuario["nombre"]=input("Ingrese el nombre: ")
-    usuario["documento"]=input("Ingrese el documento: ")
-    usuario["numero telefonico"]=input("Ingrese su numero telefono ")
-    usuario["direccion"]=input("Ingrese su direccion ")
-    usuario["tipo de usuario"]=input(("nuevo"))
-    datos["usuario"].append(usuario)
-    print("usuario registrado con éxito!")
+def generar_reportes(datos:dict):
+    reporte={}
+    reporte["numero_de_reportes"]=input("Ingrese el numero_de_reportes: ")
+    reporte["Fecha"]=input("Ingrese la fecha: ")
+    reporte["reporte"]=input("Desarrolle el reporte")
+    datos["reporte"].append(reporte)
+    print("reporte registrado con éxito!")
     return datos
 
-def eliminar_usuario(datos):
+def eliminar_reporte(datos):
     datos = dict(datos)
-    documento =input("Ingrese el documento del usuario: ")
-    for i in range(len(datos["usuario"])):
-        if datos["usuario"][i]["documento"] == documento:
-                datos["usuario"].pop(i)
-                print("Participante eliminado!")
+    Nreporte =input("Ingrese el #Reporte: ")
+    for i in range(len(datos["reporte"])):
+        if datos["reporte"][i]["#reporte"] == Nreporte:
+                datos["reporte"].pop(i)
+                print("reporte eliminado!")
                 return datos
+        
+

@@ -1,170 +1,187 @@
 #Importaciones
 from datos import *
+from excepciones import *
 RUTA_BASE_DE_DATOS = "tienda.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
 #Menu para escoger que producto se va a añadir
 def agregar_producto():
-    print("-------------------------------------------------")
-    print("¿Que producto desea agregar?")
-    print("Tecnologia")
-    print("1. audifonos")
-    print("2. Televisores")
-    print("3. computadores")
-    print("Celulares")
-    print("4. apple")
-    print("5. Samsumg")
-    print("6. Motorola")
-    print("7. Xiaomi")
-    print("8. Tecno")
-    print("-------------------------------------------------")
-    esc = str(input("Ingrese la opcion que requiera: "))
-    if esc == "1":
-        registrar_audifonos(datos)
-    elif esc == "2":
-        registrar_televisor(datos)
-    elif esc == "3":
-        registrar_computador(datos)
-    elif esc == "4":
-        registrar_apple(datos)
-    elif esc == "5":
-        registrar_samsung(datos)
-    elif esc == "6":
-        registrar_motorola(datos)
-    elif esc == "7":
-        registrar_xiaomi(datos)
-    elif esc == "8":
-        registrar_tecno(datos)
-        
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)
-    
+    try:
+        print("-------------------------------------------------")
+        print("¿Que producto desea agregar?")
+        print("Tecnologia")
+        print("1. audifonos")
+        print("2. Televisores")
+        print("3. computadores")
+        print("Celulares")
+        print("4. apple")
+        print("5. Samsumg")
+        print("6. Motorola")
+        print("7. Xiaomi")
+        print("8. Tecno")
+        print("-------------------------------------------------")
+        esc = str(input("Ingrese la opcion que requiera: "))
+        if esc == "1":
+            registrar_audifonos(datos)
+        elif esc == "2":
+            registrar_televisor(datos)
+        elif esc == "3":
+            registrar_computador(datos)
+        elif esc == "4":
+            registrar_apple(datos)
+        elif esc == "5":
+            registrar_samsung(datos)
+        elif esc == "6":
+            registrar_motorola(datos)
+        elif esc == "7":
+            registrar_xiaomi(datos)
+        elif esc == "8":
+            registrar_tecno(datos)
+            
+        guardar_datos(datos,RUTA_BASE_DE_DATOS)
+    except Exception as e:
+        log_error(e, "../Errores.txt")
 
     
 def mostrar_productome():
-    RUTA_BASE_DE_DATOS = "tienda.json"
-    datos = cargar_datos(RUTA_BASE_DE_DATOS)
-    #Ramificaciones menu producto
-    print("-------------------------------------------------")
-    print("Bienvenido al menu de para ver los productos")
-    print("1. ver todos los productos")
-    print("2. ver un producto en especifico")
-    print("0. volver al menu producto")
-    print("-------------------------------------------------")
-    while True:
-        opc = str(input("Ingrese la opcion que requiera: "))
-        if opc == "1":
-            datos = mostrar_productos(datos)
-        elif opc == "2":
-            datos = mostrar_producto(datos)
-        elif opc == "0":
-            
-            print("volviendo")
-            break
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)           
+    try:
+        RUTA_BASE_DE_DATOS = "tienda.json"
+        datos = cargar_datos(RUTA_BASE_DE_DATOS)
+        #Ramificaciones menu producto
+        print("-------------------------------------------------")
+        print("Bienvenido al menu de para ver los productos")
+        print("1. ver todos los productos")
+        print("2. ver un producto en especifico")
+        print("0. volver al menu producto")
+        print("-------------------------------------------------")
+        while True:
+            opc = str(input("Ingrese la opcion que requiera: "))
+            if opc == "1":
+                datos = mostrar_productos(datos)
+            elif opc == "2":
+                datos = mostrar_producto(datos)
+            elif opc == "0":
+                
+                print("volviendo")
+                break
+        guardar_datos(datos,RUTA_BASE_DE_DATOS)
+    except Exception as e:
+        log_error(e, "../Errores.txt")           
 def mostrar_productos(datos):
-    RUTA_BASE_DE_DATOS = "tienda.json"
-    datos2 = cargar_datos(RUTA_BASE_DE_DATOS)
-    print("¿Que productos desea ver? ")
-    prd = str(input("ingrese nombre de la catergoria : "))
-    datos2 = (datos2)
-    print (prd)
-    print("Productos disponibles")
-    for i in range(len(datos2[prd])):
-        print(datos2[prd][i]["referencia"], " - ", datos2[prd][i]["cantidad disponible"])
-     
+    try:
+        RUTA_BASE_DE_DATOS = "tienda.json"
+        datos2 = cargar_datos(RUTA_BASE_DE_DATOS)
+        print("¿Que productos desea ver? ")
+        prd = str(input("ingrese nombre de la catergoria : "))
+        datos2 = (datos2)
+        print (prd)
+        print("Productos disponibles")
+        for i in range(len(datos2[prd])):
+            print(datos2[prd][i]["referencia"], " - ", datos2[prd][i]["cantidad disponible"])
+    except Exception as e:
+        log_error(e, "../Errores.txt") 
     guardar_datos(datos,RUTA_BASE_DE_DATOS)
 def mostrar_producto(datos1):
+    try:
+        print("¿Que categoria desea ver? ")
+        prd = str(input("ingrese nombre de la catergoria : "))
         datos1 = dict(datos1)
         referencia =input("Ingrese el referencia del producto: ")
-        for i in range(len(datos1["producto"])):
-            if datos1["producto"][i]["referencia"] == referencia:
-                print(datos1["producto"][i])
+        for i in range(len(datos1[prd])):
+            if datos1[prd][i]["referencia"] == referencia:
+                print(datos1[prd][i])
+    except Exception as e:
+        log_error(e, "../Errores.txt")
 #actualizar           
 def actualizar_producto(datos):
-    datos=dict(datos)    
-    print("------------------------------------------------")
-    prd = str(input("que tipo de producto va a cambiar: "))
-    referencia =input("Ingrese el referencia del producto: ")
-    for i in range(len(datos[prd])):
-        if datos[prd][i]["referencia"]== referencia:
+    try:
+        datos=dict(datos)    
+        print("------------------------------------------------")
+        prd = str(input("que tipo de producto va a cambiar: "))
+        referencia =input("Ingrese el referencia del producto: ")
+        for i in range(len(datos[prd])):
+            if datos[prd][i]["referencia"]== referencia:
 
 
-            while True:
-                print("¿infomacion que requiera modificar")
-                print("1. para modificar el referencia: ")
-                print("2. para modificar el precio: ")
-                print("3. para modificar la fabricante: ")
-                print("4. para modificar el Garantia: ")
-                print("5. para modificar la cantidad disponible")
-                print("0. para salir ")
-                opc=input("ingrese la opcion: ")
+                while True:
+                    print("¿infomacion que requiera modificar")
+                    print("1. para modificar el referencia: ")
+                    print("2. para modificar el precio: ")
+                    print("3. para modificar la fabricante: ")
+                    print("4. para modificar el Garantia: ")
+                    print("5. para modificar la cantidad disponible")
+                    print("0. para salir ")
+                    opc=input("ingrese la opcion: ")
 
-                if opc=="1":
-                    datos[prd][i]["referencia"]=input("ingrese la nuevo referencia: ")
-                    print("se guardo con exito")
-                    print("------------------------------------------------")
+                    if opc=="1":
+                        datos[prd][i]["referencia"]=input("ingrese la nuevo referencia: ")
+                        print("se guardo con exito")
+                        print("------------------------------------------------")
 
 
-                elif opc== "2":
-                    datos[prd][i]["precio"]=input("ingrese el nuevo precio: ")
-                    print("se guardo con exito")
-                    print("------------------------------------------------")
+                    elif opc== "2":
+                        datos[prd][i]["precio"]=input("ingrese el nuevo precio: ")
+                        print("se guardo con exito")
+                        print("------------------------------------------------")
 
-                elif opc=="3":
-                    datos[prd][i]["fabricante"]= input("ingrese el nuevo fabricante: ")
-                    print("se guardo con exito")
-                    print("------------------------------------------------")
+                    elif opc=="3":
+                        datos[prd][i]["fabricante"]= input("ingrese el nuevo fabricante: ")
+                        print("se guardo con exito")
+                        print("------------------------------------------------")
+                        
+                    elif opc=="4":
+                        datos[prd][i]["garantia"]= input("ingrese la nueva garantia: ")
+                        print("se guardo con exito")
+                        print("------------------------------------------------")
                     
-                elif opc=="4":
-                    datos[prd][i]["garantia"]= input("ingrese la nueva garantia: ")
-                    print("se guardo con exito")
-                    print("------------------------------------------------")
-                
-                elif opc=="5":
-                    datos[prd][i]["cantidad_disponible"]= input("ingrese la nueva cantidad disponible: ")
-                    print("se guardo con exito")
-                    print("------------------------------------------------")
+                    elif opc=="5":
+                        datos[prd][i]["cantidad_disponible"]= input("ingrese la nueva cantidad disponible: ")
+                        print("se guardo con exito")
+                        print("------------------------------------------------")
 
-                elif opc=="0":
-                    print("volviendo")
-                    break
-                
+                    elif opc=="0":
+                        print("volviendo")
+                        break
+    except Exception as e:
+        log_error(e, "../Errores.txt")        
 
 
 #eliminar
 def eliminar_producto():
-    print("-------------------------------------------------")
-    print("¿Que producto desea eliminar?")
-    print("Tecnologia")
-    print("1. audifonos")
-    print("2. Televisores")
-    print("3. computadores")
-    print("Celulares")
-    print("4. apple")
-    print("5. Samsumg")
-    print("6. Motorola")
-    print("7. Xiaomi")
-    print("8. Tecno")
-    print("-------------------------------------------------")
-    esc = str(input("Ingrese la opcion que requiera: "))
-    if esc == "1":
-        eliminar_audifonos(datos)
-    elif esc == "2":
-        eliminar_televisor(datos)
-    elif esc == "3":
-        eliminar_computador(datos)
-    elif esc == "4":
-        eliminar_apple(datos)
-    elif esc == "5":
-        eliminar_samsung(datos)
-    elif esc == "6":
-        eliminar_motorola(datos)
-    elif esc == "7":
-        eliminar_xiaomi(datos)
-    elif esc == "8":
-        eliminar_tecno(datos)
-        
-    guardar_datos(datos,RUTA_BASE_DE_DATOS)
-
+    try:
+        print("-------------------------------------------------")
+        print("¿Que producto desea eliminar?")
+        print("Tecnologia")
+        print("1. audifonos")
+        print("2. Televisores")
+        print("3. computadores")
+        print("Celulares")
+        print("4. apple")
+        print("5. Samsumg")
+        print("6. Motorola")
+        print("7. Xiaomi")
+        print("8. Tecno")
+        print("-------------------------------------------------")
+        esc = str(input("Ingrese la opcion que requiera: "))
+        if esc == "1":
+            eliminar_audifonos(datos)
+        elif esc == "2":
+            eliminar_televisor(datos)
+        elif esc == "3":
+            eliminar_computador(datos)
+        elif esc == "4":
+            eliminar_apple(datos)
+        elif esc == "5":
+            eliminar_samsung(datos)
+        elif esc == "6":
+            eliminar_motorola(datos)
+        elif esc == "7":
+            eliminar_xiaomi(datos)
+        elif esc == "8":
+            eliminar_tecno(datos)
+            
+        guardar_datos(datos,RUTA_BASE_DE_DATOS)
+    except Exception as e:
+        log_error(e, "../Errores.txt")
 #Funciones para agregar productos
 def registrar_audifonos(datos):
     audifonos={}
@@ -172,7 +189,7 @@ def registrar_audifonos(datos):
     audifonos["precio"]=input("Ingrese el precio: ")
     audifonos["fabricante"]=input("Ingrese el fabricane ")
     audifonos["direccion"]=input("Ingrese la garantia ")
-    audifonos["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
+    audifonos["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible ")
     print(datos["audifonos"])
     datos["audifonos"].append(audifonos)
     print("audifonos registrado con éxito!")
@@ -184,7 +201,7 @@ def registrar_televisor(datos):
     televisor["precio"]=input("Ingrese el precio: ")
     televisor["fabricante"]=input("Ingrese el fabricane ")
     televisor["direccion"]=input("Ingrese la garantia ")
-    televisor["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
+    televisor["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible ")
     print(datos["televisor"])
     datos["televisor"].append(televisor)
     print("televisor registrado con éxito!")
@@ -196,7 +213,7 @@ def registrar_computador(datos):
     computador["precio"]=input("Ingrese el precio: ")
     computador["fabricante"]=input("Ingrese el fabricane ")
     computador["direccion"]=input("Ingrese la garantia ")
-    computador["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles ")
+    computador["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible ")
     print(datos["computador"])
     datos["computador"].append(computador)
     print("computador registrado con éxito!")
@@ -208,7 +225,7 @@ def registrar_apple(datos):
     apple["precio"]=input("Ingrese el precio: ")
     apple["fabricante"]=input("Ingrese el fabricane ")
     apple["direccion"]=input("Ingrese la garantia ")
-    apple["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
+    apple["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible: ")
     print(datos["apple"])
     datos["apple"].append(apple)
     print("apple registrado con éxito!")
@@ -220,7 +237,7 @@ def registrar_samsung(datos):
     samsung["precio"]=input("Ingrese el precio: ")
     samsung["fabricante"]=input("Ingrese el fabricane ")
     samsung["direccion"]=input("Ingrese la garantia ")
-    samsung["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
+    samsung["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible: ")
     
     print(datos["samsung"])
     datos["samsung"].append(samsung)
@@ -233,7 +250,7 @@ def registrar_motorola(datos):
     motorola["precio"]=input("Ingrese el precio: ")
     motorola["fabricante"]=input("Ingrese el fabricane ")
     motorola["direccion"]=input("Ingrese la garantia ")
-    motorola["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ") 
+    motorola["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible: ") 
     print(datos["motorola"])
     datos["motorola"].append(motorola)
     print("motorola registrado con éxito!")
@@ -245,7 +262,7 @@ def registrar_xiaomi(datos):
     xiaomi["precio"]=input("Ingrese el precio: ")
     xiaomi["fabricante"]=input("Ingrese el fabricane ")
     xiaomi["direccion"]=input("Ingrese la garantia ")
-    xiaomi["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
+    xiaomi["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible: ")
     print(datos["xiaomi"])
     datos["xiaomi"].append(xiaomi)
     print("xiaomi registrado con éxito!")
@@ -257,7 +274,7 @@ def registrar_tecno(datos):
     tecno["precio"]=input("Ingrese el precio: ")
     tecno["fabricante"]=input("Ingrese el fabricane ")
     tecno["direccion"]=input("Ingrese la garantia ")
-    tecno["articulos disponibles"]=input("Ingrese la cantinda de articulos disponibles: ")
+    tecno["cantidad disponible"]=input("Ingrese la cantinda de cantidad disponible: ")
     print(datos["tecno"])
     datos["tecno"].append(tecno)
     print("tecno registrado con éxito!")
