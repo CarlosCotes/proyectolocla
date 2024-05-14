@@ -1,4 +1,6 @@
 from datos import *
+RUTA_BASE_DE_DATOS = "usuario.json"
+datos = cargar_datos(RUTA_BASE_DE_DATOS)
 def actualizar_usuario(datos):
     datos=dict(datos)
     documento =input("Ingrese el documento del usuario: ")
@@ -57,7 +59,7 @@ def eliminar_usuario(datos):
     for i in range(len(datos["usuario"])):
         if datos["usuario"][i]["documento"] == documento:
                 datos["usuario"].pop(i)
-                print("Participante eliminado!")
+                print("usuario eliminado!")
                 return datos
 
 def mostrar_usuariome():
@@ -75,7 +77,7 @@ def mostrar_usuariome():
         if opc == "1":
             datos = mostrar_usuarios(datos)
         elif opc == "2":
-            datos = mostrar_usuario(datos)
+            mostrar_usuario()
         elif opc == "0":
             
             print("volviendo")
@@ -88,9 +90,9 @@ def mostrar_usuarios(datos):
         for i in range(len(datos["usuario"])):
             print(datos["usuario"][i]["nombre"], " - ", datos["usuario"][i]["documento"])
 
-def mostrar_usuario(datos1):
-        datos1 = dict(datos1)
+def mostrar_usuario():
+        datos = dict(datos)
         documento =input("Ingrese el documento del usuario: ")
-        for i in range(len(datos1["usuario"])):
-            if datos1["usuario"][i]["documento"] == documento:
-                print(datos1["usuario"][i])
+        for i in range(len(datos["usuario"])):
+            if datos["usuario"][i]["documento"] == documento:
+                print(datos["usuario"][i])

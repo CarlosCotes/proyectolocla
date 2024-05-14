@@ -18,8 +18,8 @@ def menu_servicios():
             registrar_servicios()
         elif opc == "2":
             eliminar_servicios()
-        #elif opc == 3:
-            #datos = actualizar_producto(datos)
+        elif opc == 3:
+            datos = actualizar_servicios(datos)
         elif opc == "4":
             mostrar_serviciome()
         elif opc == "0":

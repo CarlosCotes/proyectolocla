@@ -1,9 +1,7 @@
 #Importaciones de otros archivos para usarlos en este y unirlos
 from datos import *
 from usuario_menu import *
-from usuario_config import *
 from tienda_menu import *
-from tienda_config import *
 from servicios_menu import *
 
 #constantes para cargar y guardar los datos en las carpetas
@@ -28,6 +26,8 @@ while True:
         menu_tienda()
     elif opc == "3":
         menu_servicios()
+    #elif opc == "4":
+        
     elif opc == "0":
         print("¡Buen trabajo!")
         break

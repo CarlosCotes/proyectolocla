@@ -25,12 +25,5 @@ def menu_usuario():
         elif opc == "0":
             
             print("volviendo")
-            print("-------------------------------------------------")
-            print("1. menu usuario")
-            print("2. menu tienda")
-            print("3. menu servicios")
-            print("4. menu reportes")
-            print("0. salir del menu")
-            print("-------------------------------------------------")
             break
-               
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)       

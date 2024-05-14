@@ -80,45 +80,54 @@ def mostrar_producto(datos1):
                 print(datos1["producto"][i])
 #actualizar           
 def actualizar_producto(datos):
-    datos=dict(datos)
+    datos=dict(datos)    
+    print("------------------------------------------------")
+    prd = str(input("que tipo de producto va a cambiar: "))
     referencia =input("Ingrese el referencia del producto: ")
-    for i in range(len(datos["producto"])):
-        if datos["producto"][i]["referencia"]== referencia:
+    for i in range(len(datos[prd])):
+        if datos[prd][i]["referencia"]== referencia:
 
 
             while True:
                 print("¿infomacion que requiera modificar")
+                print("1. para modificar el referencia: ")
+                print("2. para modificar el precio: ")
+                print("3. para modificar la fabricante: ")
+                print("4. para modificar el Garantia: ")
+                print("5. para modificar la cantidad disponible")
                 print("0. para salir ")
-                print("1. para modificar el nombre: ")
-                print("2. para modificar el referencia: ")
-                print("3. para modificar la direccion: ")
-                print("4. para modificar el telefono: ")
-
                 opc=input("ingrese la opcion: ")
 
                 if opc=="1":
-                    datos["producto"][i]["nombre"]= input("ingrese el nuevo nombre: ")
+                    datos[prd][i]["referencia"]=input("ingrese la nuevo referencia: ")
                     print("se guardo con exito")
                     print("------------------------------------------------")
 
 
                 elif opc== "2":
-                    datos["producto"][i]["referencia"]=input("ingrese el nuevo referencia: ")
+                    datos[prd][i]["precio"]=input("ingrese el nuevo precio: ")
                     print("se guardo con exito")
                     print("------------------------------------------------")
 
                 elif opc=="3":
-                    datos["producto"][i]["direccion"]= input("ingrese la nueva direccion: ")
+                    datos[prd][i]["fabricante"]= input("ingrese el nuevo fabricante: ")
                     print("se guardo con exito")
                     print("------------------------------------------------")
                     
                 elif opc=="4":
-                    datos["producto"][i]["telefono"]= input("ingrese el nuevo telefono: ")
+                    datos[prd][i]["garantia"]= input("ingrese la nueva garantia: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+                
+                elif opc=="5":
+                    datos[prd][i]["cantidad_disponible"]= input("ingrese la nueva cantidad disponible: ")
                     print("se guardo con exito")
                     print("------------------------------------------------")
 
                 elif opc=="0":
+                    print("volviendo")
                     break
+                
 
 
 #eliminar

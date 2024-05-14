@@ -110,8 +110,43 @@ def mostrar_servicio(datos1):
             if datos1["servicio"][i]["referencia"] == referencia:
                 print(datos1["servicio"][i])
 
+def actualizar_servicios(datos):
+    datos=dict(datos)    
+    print("------------------------------------------------")
+    prd = str(input("que tipo de producto va a cambiar: "))
+    referencia =input("Ingrese el referencia del producto: ")
+    for i in range(len(datos[prd])):
+        if datos[prd][i]["referencia"]== referencia:
 
 
+            while True:
+                print("¿infomacion que requiera modificar")
+                print("1. para modificar el referencia ")
+                print("2. para modificar el precio ")
+                print("3. para modificar las caracteristicas ")
+                print("0. para salir ")
+                opc=input("ingrese la opcion: ")
+
+                if opc=="1":
+                    datos[prd][i]["referencia"]=input("ingrese la nuevo referencia: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+
+                elif opc== "2":
+                    datos[prd][i]["precio"]=input("ingrese el nuevo precio: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+                elif opc=="3":
+                    datos[prd][i]["caracteristicas"]= input("ingrese las nuevas caracteristicas: ")
+                    print("se guardo con exito")
+                    print("------------------------------------------------")
+
+                elif opc=="0":
+                    print("volviendo")
+                    break
+            return datos
 
 
 
