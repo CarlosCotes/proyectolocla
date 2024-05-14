@@ -124,7 +124,7 @@ def mostrar_usuarios(datos):
         for i in range(len(datos["usuario"])):
             print(datos["usuario"][i]["nombre"], " - ", datos["usuario"][i]["documento"])
     except Exception as e:
-        log_error(e, "../Errores.txt")
+        log_error(e, "Errores.txt")
 def mostrar_usuario(datos):
     try:
         datos = dict(datos)

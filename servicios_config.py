@@ -40,20 +40,27 @@ def registrar_servicios():
 
 def comprar_servicio():
     while True:
+        RUTA_BASE_DE_USUARIO = "usuario.json"
+        datos = cargar_datos(RUTA_BASE_DE_USUARIO)
         datos1 = cargar_datos(RUTA_BASE_DE_DATOS)
-        print("el pago se agrega en la proxima factura claro")
-        print("¿Que categoria desea ver? ")
-        prd = str(input("ingrese nombre de la catergoria : "))
-        datos1 = dict(datos1)
-        referencia =input("Ingrese el referencia del producto: ")
-        for i in range(len(datos1[prd])):
-            if datos1[prd][i]["referencia"] == referencia and datos[prd][i]["cantidad disponible"]> 1:
-                print(datos1[prd][i])
-                print("¡comprado!")
-                datos["reporte"].append(prd)
-                
+        datos = dict(datos)
+        documento =input("Ingrese el documento del usuario: ")
+        for i in range(len(datos["usuario"])):
+            if datos["usuario"][i]["documento"] == documento:
+                print(datos["usuario"][i])
+                print("el pago se agrega en la proxima factura claro")
+                print("¿Que categoria desea ver? ")
+                prd = str(input("ingrese nombre de la catergoria : "))
+                datos1 = dict(datos1)
+                referencia =input("Ingrese el referencia del producto: ")
+                for i in range(len(datos1[prd])):
+                    if datos1[prd][i]["referencia"] == referencia:
+                        print(datos1[prd][i])
+                        print("¡comprado!")
+                        datos[prd][i]["cantidad disponible"] - 1
+                guardar_datos(RUTA_BASE_DE_USUARIO)
 
-                
+
                 
             
 def comprar_serviciosas():

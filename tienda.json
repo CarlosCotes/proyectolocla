@@ -5,21 +5,21 @@
             "precio": "$792.960",
             "Fabricante": "Apple",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "redmi buds 6 xiaomi",
             "precio": "$199.900",
             "Fabricante": "xiaomi",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "samsung galaxy buds FE",
             "precio": "$507.900",
             "Fabricante": "samsung",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         }
     ],
     "televisores": [
@@ -28,21 +28,21 @@
             "precio": "$1.989.900",
             "Fabricante": "Kalley",
             "Garantia": "2 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "TV Samsung 58P Crystal UHD 4K CU7000",
             "precio": "$3.337.900",
             "Fabricante": "Samsung",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "TV Panasonic 43P LED 4K FHD Smart TV",
             "precio": "$1.901.900",
             "Fabricante": "Panasonic",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         }
     ],
     "computadores": [
@@ -51,21 +51,21 @@
             "precio": "$1.999.000",
             "Fabricante": "compumax",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "Portatil Acer Nitro AN515-58-55TY 512 GB SSD 15.6",
             "precio": "$4.430.90",
             "Fabricante": "Acer",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "Portatil Lenovo 15ALC7 R5 8GB 512GB Linux Azul",
             "precio": "$1.692.900 ",
             "Fabricante": "Lenovo",
             "Garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         }
     ],
     "apple": [
@@ -74,21 +74,21 @@
             "precio": "$1.999.960 ",
             "fabricante": "Apple",
             "garantia": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         },
         {
             "referencia": "Iphone 15 Pro Max 256gb 5g",
             "precio": "$6.729.960",
             "fabricante": "Apple",
             "direccion": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         },
         {
             "referencia": "Iphone 13 128gb 5g",
             "precio": "$2.999.960",
             "fabricante": "Apple",
             "direccion": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         }
     ],
     "samsung": [
@@ -97,21 +97,21 @@
             "precio": "$2.498.950 ",
             "fabricante": "samsung",
             "direccion": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         },
         {
             "referencia": "Celular Samsung Galaxy A54 256 GB 5G",
             "precio": "$1.649.950",
             "fabricante": "samsung",
             "direccion": "1 year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         },
         {
             "referencia": "Celular Samsung Galaxy A35 256 GB 5G",
             "precio": "$1.399.950",
             "fabricante": "samsung",
             "direccion": "1  year",
-            "cantidad disponible": "20000"
+            "cantidad disponible": 20000
         }
     ],
     "motorola": [
@@ -120,14 +120,14 @@
             "precio": "$569.900",
             "fabricante": "motorola",
             "direccion": "1 year",
-            "cantidad disponible": "2000"
+            "cantidad disponible": 2000
         },
         {
             "referencia": "Celular Motorola Edge 40 Neo 256 GB 5G",
             "precio": "$1.321.900",
             "fabricante": "Motorola",
             "direccion": "1 year",
-            "cantidad disponible": "2000"
+            "cantidad disponible": 2000
         }
     ],
     "xiaomi": [],
