@@ -1,5 +1,5 @@
 {
-    "prepago": [
+    "larga distancia internacional": [
         {
             "referencia": "",
             "precio": "",
@@ -23,7 +23,7 @@
             "caracteristicas": ""
         }
     ],
-    "roaming_internacional": [
+    "roaming internacional": [
         {
             "referencia": "",
             "precio": "",
@@ -37,14 +37,14 @@
             "caracteristicas": ""
         }
     ],
-    "planes_de_internet": [
+    "planes de internet": [
         {
             "referencia": "",
             "precio": "",
             "caracteristicas": ""
         }
     ],
-    "planes_de_television": [
+    "planes de television": [
         {
             "referencia": "",
             "precio": "",

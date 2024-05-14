@@ -32,8 +32,7 @@ try:
         print("Reportes")
         print("13. gerenerar un reporte")
         print("14. eliminar un reporte")
-        print("15. actualiza un reporte")
-        print("16. mostrar menu para ver los reportes")
+        print("15. mostrar menu para ver los reportes")
         print("0. salir del menu")
         print("-------------------------------------------------")
         opc = str(input("Ingrese la opcion que requiera: "))
@@ -66,8 +65,6 @@ try:
         elif opc == "14":
             eliminar_reporte()
         elif opc == "15":
-            actualizar_servicios()
-        elif opc == "16":
             mostrar_serviciome()    
                 
         elif opc == "0":

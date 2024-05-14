@@ -40,8 +40,39 @@ def agregar_producto():
         guardar_datos(datos,RUTA_BASE_DE_DATOS)
     except Exception as e:
         log_error(e, "../Errores.txt")
-
-    
+def comprar():
+    while True:
+        print("el pago se agrega en la proxima factura claro")
+        print("¿Que categoria desea ver? ")
+        prd = str(input("ingrese nombre de la catergoria : "))
+        datos1 = dict(datos1)
+        referencia =input("Ingrese el referencia del producto: ")
+        for i in range(len(datos1[prd])):
+            if datos1[prd][i]["referencia"] == referencia and datos[prd][i]["cantidad disponible"]> 1:
+                print(datos1[prd][i])
+        
+                
+            
+def comprar_producto():
+    try:
+        print("-------------------------------------------------")
+        print("Bienvenido a la tienda claro")
+        print("1. menu para ver objetos")
+        print("2. para comprar")
+        print("0. para volver")
+        print("-------------------------------------------------")
+        
+        while True:
+            opc = str(input("ingrese la opcion que requiera: "))
+            if opc == "1":
+                 mostrar_productome()
+            elif opc == "2":
+                    comprar()
+            elif opc == "0":    
+                print("volviendo")
+                break   
+    except Exception as e:
+        log_error(e, "Errores.txt") 
 def mostrar_productome():
     try:
         RUTA_BASE_DE_DATOS = "tienda.json"

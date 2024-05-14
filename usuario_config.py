@@ -45,7 +45,7 @@ def actualizar_usuario(datos):
                         break
             return datos
     except Exception as e:
-        log_error(e, "../Errores.txt")
+        log_error(e, "Errores.txt")
 def registrar_usuarioadm(datos:dict):
     try:
         usuario={}
@@ -54,6 +54,29 @@ def registrar_usuarioadm(datos:dict):
         usuario["numero telefonico"]=input("Ingrese su numero telefono ")
         usuario["direccion"]=input("Ingrese su direccion ")
         usuario["tipo de usuario"]=input(("nuevo"))
+        datos["usuario"].append(usuario)
+        print("usuario registrado con éxito!")
+        return datos
+    except Exception as e:
+        log_error(e, "Errores.txt")
+def eliminar_usuario(datos):
+    try:
+        datos = dict(datos)
+        documento =input("Ingrese el documento del usuario: ")
+        for i in range(len(datos["usuario"])):
+            if datos["usuario"][i]["documento"] == documento:
+                    datos["usuario"].pop(i)
+                    print("usuario eliminado!")
+                    return datos
+    except Exception as e:
+        log_error(e, "Errores.txt")
+def registrar_usuario(datos:dict):
+    try:
+        usuario={}
+        usuario["nombre"]=input("Ingrese el nombre: ")
+        usuario["documento"]=input("Ingrese el documento: ")
+        usuario["numero telefonico"]=input("Ingrese su numero telefono ")
+        usuario["direccion"]=input("Ingrese su direccion ")
         datos["usuario"].append(usuario)
         print("usuario registrado con éxito!")
         return datos
@@ -69,7 +92,7 @@ def eliminar_usuario(datos):
                     print("usuario eliminado!")
                     return datos
     except Exception as e:
-        log_error(e, "../Errores.txt")
+        log_error(e, "Errores.txt")
 def mostrar_usuariome():
     try:
         RUTA_BASE_DE_DATOS = "usuario.json"

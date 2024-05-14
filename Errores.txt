@@ -1,0 +1,17 @@
+2024-05-14 13:16:31: log_error() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "e:\proyectolocla\servicios_config.py", line 73, in comprar_serviciosas
+    comprar_servicio()
+  File "e:\proyectolocla\servicios_config.py", line 50, in comprar_servicio
+    if datos1[prd][i]["referencia"] == referencia and datos[prd][i]["cantidad disponible"]> 1:
+                                                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'cantidad disponible'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "e:\proyectolocla\menu_usuarios.py", line 39, in <module>
+    comprar_serviciosas()
+  File "e:\proyectolocla\servicios_config.py", line 78, in comprar_serviciosas
+    log_error(e, "Errores.txt")
+TypeError: log_error() takes 1 positional argument but 2 were given

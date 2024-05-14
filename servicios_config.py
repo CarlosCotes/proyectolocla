@@ -1,4 +1,5 @@
 from datos import *
+from excepciones import *
 RUTA_BASE_DE_DATOS = "servicios.json"
 datos = cargar_datos(RUTA_BASE_DE_DATOS)
 
@@ -37,11 +38,48 @@ def registrar_servicios():
         
     guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
+def comprar_servicio():
+    while True:
+        datos1 = cargar_datos(RUTA_BASE_DE_DATOS)
+        print("el pago se agrega en la proxima factura claro")
+        print("¿Que categoria desea ver? ")
+        prd = str(input("ingrese nombre de la catergoria : "))
+        datos1 = dict(datos1)
+        referencia =input("Ingrese el referencia del producto: ")
+        for i in range(len(datos1[prd])):
+            if datos1[prd][i]["referencia"] == referencia and datos[prd][i]["cantidad disponible"]> 1:
+                print(datos1[prd][i])
+                print("¡comprado!")
+                datos["reporte"].append(prd)
+                
 
+                
+                
+            
+def comprar_serviciosas():
+    try:
+        print("-------------------------------------------------")
+        print("Bienvenido a la tienda claro")
+        print("1. menu para ver objetos")
+        print("2. para comprar")
+        print("0. para volver")
+        print("-------------------------------------------------")
+        
+        while True:
+            opc = str(input("ingrese la opcion que requiera: "))
+            if opc == "1":
+                 mostrar_serviciome()
+            elif opc == "2":
+                    comprar_servicio()
+            elif opc == "0":    
+                print("volviendo")
+                break 
+    except Exception as e:
+        log_error(e, "Errores.txt") 
 def eliminar_servicios():
     while True:
         print("-------------------------------------------------")
-        print("¿Que servicio desea agregar?")
+        print("¿Que servicio desea eliminar?")
         print("Servicios moviles")
         print("1. postpago")
         print("2. Larga Distancia Internaciona")
@@ -151,7 +189,29 @@ def actualizar_servicios(datos):
                     break
             return datos
 
-
+def comprar_servicios():  
+    RUTA_BASE_DE_DATOS = "servicios.json"
+    datos2 = cargar_datos(RUTA_BASE_DE_DATOS)  
+    print("-------------------------------------------------")
+    print("Bienvenido al menu de compras de servicios")
+    print("Servicios moviles")
+    print("Postpago")
+    print("roaming internacional")
+    print("larga distancia internacional")
+    print("Servicios hogar")
+    print("tripleplay")
+    print("planes de internet")
+    print("planes de television")
+    
+    print("¿Que servicios desea ver? ")
+    prd = str(input("ingrese nombre de la catergoria : "))
+    datos2 = (datos2)
+    print (prd)
+    print("servicios disponibles")
+    for i in range(len(datos2[prd])):
+        print(datos2[prd][i]["referencia"], " - ", datos2[prd][i]["precio"]," - ", datos2[prd][i]["caracteristicas"])
+     
+    guardar_datos(datos,RUTA_BASE_DE_DATOS)
 
 
 
