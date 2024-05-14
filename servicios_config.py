@@ -71,7 +71,7 @@ def eliminar_servicios():
             break
 
 def mostrar_serviciome():
-    RUTA_BASE_DE_DATOS = "tienda.json"
+    RUTA_BASE_DE_DATOS = "servicios.json"
     datos = cargar_datos(RUTA_BASE_DE_DATOS)
     #Ramificaciones menu servicio
     print("-------------------------------------------------")
@@ -91,25 +91,28 @@ def mostrar_serviciome():
             print("volviendo")
             break
     guardar_datos(datos,RUTA_BASE_DE_DATOS)           
-def mostrar_servicios(datos):
-    RUTA_BASE_DE_DATOS = "tienda.json"
-    datos = cargar_datos(RUTA_BASE_DE_DATOS)
+def mostrar_servicios(datos2):
+    RUTA_BASE_DE_DATOS = "servicios.json"
+    datos2 = cargar_datos(RUTA_BASE_DE_DATOS)
     print("¿Que servicios desea ver? ")
     prd = str(input("ingrese nombre de la catergoria : "))
-    datos = (datos)
+    datos2 = (datos2)
     print (prd)
     print("servicios disponibles")
-    for i in range(len(datos[prd])):
-        print(datos[prd][i]["referencia"], " - ", datos[prd][i]["precio"])
+    for i in range(len(datos2[prd])):
+        print(datos2[prd][i]["referencia"], " - ", datos2[prd][i]["precio"])
      
     guardar_datos(datos,RUTA_BASE_DE_DATOS)
 def mostrar_servicio(datos1):
-        datos1 = dict(datos1)
+        datos = cargar_datos(RUTA_BASE_DE_DATOS)        
+        print("¿Que categoria desea ver? ")
+        prd = str(input("ingrese nombre de la catergoria : "))
+        datos1 = dict(datos)
         referencia =input("Ingrese el referencia del servicio: ")
-        for i in range(len(datos1["servicio"])):
-            if datos1["servicio"][i]["referencia"] == referencia:
-                print(datos1["servicio"][i])
-
+        for i in range(len(datos1[prd])):
+            if datos1[prd][i]["referencia"] == referencia:
+                print(datos1[prd][i])
+        guardar_datos(datos,RUTA_BASE_DE_DATOS)
 def actualizar_servicios(datos):
     datos=dict(datos)    
     print("------------------------------------------------")

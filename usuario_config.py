@@ -86,14 +86,14 @@ def mostrar_usuariome():
             if opc == "1":
                 datos = mostrar_usuarios(datos)
             elif opc == "2":
-                mostrar_usuario()
+                datos = mostrar_usuario(datos)
             elif opc == "0":
                 
                 print("volviendo")
                 break
         guardar_datos(datos,RUTA_BASE_DE_DATOS)           
     except Exception as e:
-        log_error(e, "../Errores.txt")
+        log_error(e)
 def mostrar_usuarios(datos):
     try:
         datos = dict(datos)
@@ -102,7 +102,7 @@ def mostrar_usuarios(datos):
             print(datos["usuario"][i]["nombre"], " - ", datos["usuario"][i]["documento"])
     except Exception as e:
         log_error(e, "../Errores.txt")
-def mostrar_usuario():
+def mostrar_usuario(datos):
     try:
         datos = dict(datos)
         documento =input("Ingrese el documento del usuario: ")

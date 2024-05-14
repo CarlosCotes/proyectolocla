@@ -19,7 +19,8 @@
         },
         {
             "referencia": "100 GB 5G",
-            "precio": "$59.900"
+            "precio": "$59.900",
+            "caracteristicas": ""
         }
     ],
     "roaming_internacional": [
