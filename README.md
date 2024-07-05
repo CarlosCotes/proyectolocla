@@ -76,7 +76,8 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 >    file=open(archivo,"w")
 >    file.write(diccionario)
 >    file.close()
-``` 
+```
+> [!]  
 > no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 > 
 >
