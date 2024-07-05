@@ -19,25 +19,27 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 > [!IMPORTANT]  
 >
 >### Informacion-general
-> El desarrollo del software cuenta con dos modulos principales los cuales tienen funciones diferentes los cuales son modulo de usuario y modulo de administrador el modulo de usuario cuenta con requerimientos basico como >* Creacion de perfil
+> El desarrollo del software cuenta con dos modulos principales los cuales tienen funciones diferentes los cuales son modulo de usuario y modulo de administrador. el modulo de usuario cuenta con requerimientos basico como
+>
+>* Creacion de perfil
 >* eliminacion del perfil
 >* Actualizacion del perfil
 >* visualizacion del perfil
 >
-> El menu de usuario le permite realizar las siguentes funciones
+> **El menu de usuario le permite realizar las siguentes funciones**
 >
 >* Adquirir un servicio
 >* Visualizar los servicio
 >* Comprar un producto
 >* Visualizar los productos
 >
-> En cuanto al modulo del administrador permite
+> **En cuanto al modulo del administrador permite**
 >* Creacion de un perfiles
 >* eliminacion de perfiles
 >* actualizar informacion de perfiles
 >* visualizar los perfiles
 >
->  El menu de administrador le permite realizar las siguentes funciones
+>  **El menu de administrador le permite realizar las siguentes funciones**
 >
 >* Creacion de servicios
 >* Eliminar servicios
@@ -49,10 +51,32 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 >* Actualizar la informacion de los productos
 >* Visualizar los productos
 >
->* >* Creacion de reportes de ventas
+>* Creacion de reportes de ventas
 >* Eliminar reportes de venta
 >* Actualizar la informacion de los reportes de ventas
->* Visualizar los reportes 
+>* Visualizar los reportes
+>
+> para cargar los datos y guardar se uso la siguentes funciones
+> 
+```bash
+>import json
+>
+>def cargar_datos(archivo):
+>    datos = {}
+>    with open(archivo,"r") as file:
+>        datos=json.load(file)
+>    return datos
+>        
+>        
+>
+>def guardar_datos(datos, archivo):
+>    datos = dict(datos)
+>    
+>    diccionario=json.dumps(datos, indent=4)
+>    file=open(archivo,"w")
+>    file.write(diccionario)
+>    file.close()
+``` 
 > no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 > 
 >
