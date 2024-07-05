@@ -77,8 +77,51 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 >    file.write(diccionario)
 >    file.close()
 ```
-> [!]  
+> [!IMPORTANT]
+> La cual se encarga de utilizar archivos json para guardar diccionarios con informacion esta funcion se utiliza en fuciones como
+>   
 > no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
+```bash
+>from datos import *
+>
+>RUTA_BASE_DE_DATOS = "tienda.json"
+>datos = cargar_datos(RUTA_BASE_DE_DATOS)
+>#Menu para escoger que producto se va a añadir
+>def agregar_producto():
+>        print("-------------------------------------------------")
+>        print("¿Que producto desea agregar?")
+>        print("Tecnologia")
+>        print("1. audifonos")
+>        print("2. Televisores")
+>        print("3. computadores")
+>        print("Celulares")
+>        print("4. apple")
+>        print("5. Samsumg")
+>        print("6. Motorola")
+>        print("7. Xiaomi")
+>        print("8. Tecno")
+>        print("-------------------------------------------------")
+>        esc = int(input("Ingrese la opcion que requiera: "))
+>        if esc == 1:
+>            registrar_audifonos(datos)
+>        elif esc == 2:
+>            registrar_televisor(datos)
+>        elif esc == 3:
+>            registrar_computador(datos)
+>        elif esc == 4:
+>            registrar_apple(datos)
+>        elif esc == 5:
+>            registrar_samsung(datos)
+>        elif esc == 6:
+>            registrar_motorola(datos)
+>        elif esc == 7:
+>            registrar_xiaomi(datos)
+>        elif esc == 8:
+>            registrar_tecno(datos)
+>            
+>        guardar_datos(datos,RUTA_BASE_DE_DATOS)
+```
+> [!IMPORTANT]
 > 
 >
 >### Funcionamiento
