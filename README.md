@@ -80,7 +80,6 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 > [!IMPORTANT]
 > La cual se encarga de utilizar archivos json para guardar diccionarios con informacion esta funcion se utiliza en fuciones como
 >   
-> no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 ```bash
 >from datos import *
 >
@@ -122,7 +121,7 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 >        guardar_datos(datos,RUTA_BASE_DE_DATOS)
 ```
 > [!IMPORTANT]
-> 
+> no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 >
 >### Funcionamiento
 > la maquetacion cuenta con diversas paginas en las cuales se puede ingresar como lo son la seccion de Abrigos, Camisetas, Pantalones y Carrito, el carrito cuenta con vacio de articulos ya sea por unidad o en general
