@@ -1,8 +1,8 @@
-# RAZZA
+# CLARO
 
 ### Descripcion
-El repositorio cuenta con la maquetacion para un ecomerce 
-La intancia en la cual de desarrollo la maquetacion de este ecomerce fue durante la realizacion de un reto para el desarrollador ya que este proyecto se realizo en 3 horas
+El repositorio cuenta con un software para una operadora
+Este software contiene multiples funciones tanto para un usuarios como para un administrador.  
 ***
 ## Tabla de contenido
 | Indice |  |
@@ -19,15 +19,40 @@ La intancia en la cual de desarrollo la maquetacion de este ecomerce fue durante
 > [!IMPORTANT]  
 >
 >### Informacion-general
->  El desarrollo de la maquetacion fue bastante fructífero para el aprendizaje del desarrollador. Durante el desarrollo del proyecto el manejo del tiempo fue bastante clave para conseguir terminar todos los requerimientos que se especificaron
-> 
-> **La maquetacion se basa en lo siguentes requimientos:**
-> * Pagina principal donde mostrar todos los articulos
-> * Diversas paginas donde mostrar los articulos por tipo
-> * pagina donde mostrar un carrito con articulos
-> * en la pagina donde se visualiza el carrito incluir una pagina donde se podra eliminar todos los articulos
-> * en la pagina donde se visualiza el carrito incluir una pagina donde se podra eliminar un solo articulo del carrito
-> 
+> El desarrollo del software cuenta con dos modulos principales los cuales tienen funciones diferentes los cuales son modulo de usuario y modulo de administrador el modulo de usuario cuenta con requerimientos basico como >* Creacion de perfil
+>* eliminacion del perfil
+>* Actualizacion del perfil
+>* visualizacion del perfil
+>
+> El menu de usuario le permite realizar las siguentes funciones
+>
+>* Adquirir un servicio
+>* Visualizar los servicio
+>* Comprar un producto
+>* Visualizar los productos
+>
+> En cuanto al modulo del administrador permite
+>* Creacion de un perfiles
+>* eliminacion de perfiles
+>* actualizar informacion de perfiles
+>* visualizar los perfiles
+>
+>  El menu de administrador le permite realizar las siguentes funciones
+>
+>* Creacion de servicios
+>* Eliminar servicios
+>* Actualizar la informacion de los servicios
+>* Visualizar los servicios
+>
+>* Creacion de productos
+>* Eliminar productos
+>* Actualizar la informacion de los productos
+>* Visualizar los productos
+>
+>* >* Creacion de reportes de ventas
+>* Eliminar reportes de venta
+>* Actualizar la informacion de los reportes de ventas
+>* Visualizar los reportes 
 > no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 > 
 >
@@ -44,9 +69,8 @@ La intancia en la cual de desarrollo la maquetacion de este ecomerce fue durante
 >  
 >### Tecnologias-utilizadas
 >Lista de lenguajes en los cuales se desarrollo
->* [HTML](HTML): Version 5.0
+>* [Python](Python): Version: 3.12.2 
 >
->* [CSS](CSS): Version 3.0
 
 ***
 > [!WARNING]  
