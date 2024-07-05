@@ -128,11 +128,10 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 > 
 >### Instalacion
 >
->1. Descargar en visual estudio code la extension live server
->2. Descargar el archivo zip desde el repositorio
->3. Descomprimir el archivo zip
->4. Abrir la carpeta desde visual estudio code
->5. Iniciar el archivo index.html con ayuda de la extension live server
+>1. Descargar el archivo zip desde el repositorio
+>2. Descomprimir el archivo zip
+>3. Abrir la carpeta desde visual estudio code
+>4. Iniciar el terminal desde el archivo menu_adm.py o menu_usuario.py
 >  
 >### Tecnologias-utilizadas
 >Lista de lenguajes en los cuales se desarrollo
