@@ -2,6 +2,7 @@
 
 ### Descripcion
 El repositorio cuenta con un software para una operadora
+
 Este software contiene multiples funciones tanto para un usuarios como para un administrador.  
 ***
 ## Tabla de contenido
