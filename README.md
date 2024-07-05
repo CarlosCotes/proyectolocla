@@ -11,10 +11,9 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 | 1 | [Descripcion](#Descripcion) |
 | 2 | [Informacion general](#Informacion-general)|
 | 3 | [Instalacion](#Instalacion) |
-| 4 | [Funcionamiento](#Funcionamiento)|
-| 5 | [Tecnologias utilizadas](#Tecnologias-utilizadas) |
-| 6 | [Hecho por](#Desarrollador)|
-| 7 | [Mensaje del desarrollador](#Mensaje-del-desarrollador)|
+| 4 | [Tecnologias utilizadas](#Tecnologias-utilizadas) |
+| 5 | [Hecho por](#Desarrollador)|
+| 6 | [Mensaje del desarrollador](#Mensaje-del-desarrollador)|
 
 ***
 > [!IMPORTANT]  
@@ -124,9 +123,6 @@ Este software contiene multiples funciones tanto para un usuarios como para un a
 > [!IMPORTANT]
 > no se busca continuar con el proyecto o solucionar problemas que presenta actualmente en base a esta informacion no recibira actualizaciones el repositorio
 >
->### Funcionamiento
-> la maquetacion cuenta con diversas paginas en las cuales se puede ingresar como lo son la seccion de Abrigos, Camisetas, Pantalones y Carrito, el carrito cuenta con vacio de articulos ya sea por unidad o en general
-> 
 >### Instalacion
 >
 >1. Descargar el archivo zip desde el repositorio
